@@ -2,11 +2,14 @@
 *** GENERAL
 **********************************************/
 
+/* NOTE: THIS WILL BE FILLED WITH COMMENTS HERE */
+
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    
+
 }
 
 .clearfix::after {
@@ -16,6 +19,7 @@
 }
 
 body {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(62, 20, 20, 0.4)), to(rgba(62, 20, 20, 0.4))), url(back.jpg);
     background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
     background-size: cover;
     background-position: center;
@@ -31,8 +35,10 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: #fff;
+    -webkit-box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -70,8 +76,13 @@ body {
     margin-bottom: 130px;
 }
 
-.active { background-color: #f7f7f7; }
-.active .player-name { font-weight: 300; }
+.active {
+    background-color: #f7f7f7;
+}
+
+.active .player-name {
+    font-weight: 300;
+}
 
 .active .player-name::after {
     content: "\2022";
@@ -80,7 +91,7 @@ body {
     color: #EB4D4D;
     top: -7px;
     right: 10px;
-    
+
 }
 
 .player-current-box {
@@ -107,6 +118,7 @@ button {
     position: absolute;
     width: 200px;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     color: #555;
     background: none;
@@ -116,11 +128,17 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 300;
+    -webkit-transition: background-color 0.3s, color 0.3s;
     transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover { font-weight: 600; }
-button:hover i { margin-right: 20px; }
+button:hover {
+    font-weight: 600;
+}
+
+button:hover i {
+    margin-right: 20px;
+}
 
 button:focus {
     outline: none;
@@ -134,21 +152,42 @@ i {
     line-height: 1;
     vertical-align: text-top;
     margin-top: -4px;
+    -webkit-transition: margin 0.3s;
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px;}
-.btn-roll { top: 340px;}
-.btn-roll:hover > .ion-ios-loop {transform: rotate(90deg) scale(1.1);}
-.btn-hold { top: 400px;}
-.btn-hold:hover > .ion-ios-download-outline {transform: scaleX(-1); filter: FlipH;}
+.btn-new {
+    top: 45px;
+}
+
+.btn-roll {
+    top: 340px;
+}
+
+.btn-roll:hover>.ion-ios-loop {
+    -webkit-transform: rotate(90deg) scale(1.1);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.btn-hold {
+    top: 400px;
+}
+
+.btn-hold:hover>.ion-ios-download-outline {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -webkit-filter: FlipH;
+    filter: FlipH;
+}
 
 .dice {
     position: absolute;
     left: 50%;
     top: 178px;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     height: 100px;
+    -webkit-box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
 }
 
@@ -158,8 +197,14 @@ i {
     display: none;
 }
 
-.winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 300; color: #EB4D4D; }
+.winner {
+    background-color: #f7f7f7;
+}
+
+.winner .player-name {
+    font-weight: 300;
+    color: #EB4D4D;
+}
 
 /* ================================ INPUT FOR SCORE ============================ */
 
@@ -167,8 +212,9 @@ i {
     position: absolute;
     left: 50%;
     top: 450px;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-/*    height: 100px;*/
+    /*    height: 100px;*/
 }
 
 .input_number {
